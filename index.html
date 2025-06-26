@@ -3,46 +3,69 @@
 <head>
   <title>Chance Durham – Symbolic-Quantum Research</title>
   <link rel="stylesheet" href="style.css">  <style>
-    /* Dark Mode Base Styles */
+    /* Elegant Dark Mode Base Styles */
     body {
-      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-      color: #e2e8f0;
+      background: #111827;
+      color: #e5e7eb;
       margin: 0;
       padding: 20px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     h1 {
-      color: #64ffda;
-      text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+      color: #2dd4bf;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
+      font-weight: 700;
     }
 
     h2 {
-      color: #bb86fc;
-      text-shadow: 0 0 15px rgba(187, 134, 252, 0.2);
+      color: #eab308;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     p {
-      line-height: 1.6;
-      color: #cbd5e1;
+      line-height: 1.7;
+      color: #d1d5db;
+    }
+
+    /* Header Section with Profile */
+    .header-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .header-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .profile-container {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     /* Navigation Styles */
     nav {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(100, 255, 218, 0.2);
-      border-radius: 15px;
-      padding: 1rem;
+      background: rgba(31, 41, 55, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(45, 212, 191, 0.15);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
-      color: #64ffda;
+      color: #2dd4bf;
       text-decoration: none;
       margin-right: 2rem;
       font-weight: 500;
@@ -52,22 +75,35 @@
     }
 
     nav a:hover {
-      background: rgba(100, 255, 218, 0.1);
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+      background: rgba(45, 212, 191, 0.1);
+      color: #eab308;
+      transform: translateY(-1px);
     }
 
     /* Profile Image */
     .profile {
       border-radius: 50%;
-      border: 3px solid #64ffda;
-      box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
-      max-width: 150px;
-      margin: 1rem 0;
+      border: 3px solid #2dd4bf;
+      box-shadow: 0 8px 25px rgba(45, 212, 191, 0.15);
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
     }
 
-    /* Card Grid */
+    /* Responsive Profile Layout */
+    @media (max-width: 768px) {
+      .header-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .profile {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 1rem;
+      }
+    }    /* Card Grid */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -76,113 +112,98 @@
     }
 
     .card {
-      background: linear-gradient(145deg, #1e293b, #334155);
-      border: 1px solid rgba(100, 255, 218, 0.1);
-      border-radius: 15px;
+      background: rgba(31, 41, 55, 0.6);
+      border: 1px solid rgba(107, 114, 128, 0.2);
+      border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #64ffda, #bb86fc, #f472b6);
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      backdrop-filter: blur(5px);
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(100, 255, 218, 0.1);
-      border-color: rgba(100, 255, 218, 0.3);
-    }
-
-    .card:hover::before {
-      opacity: 1;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border-color: rgba(45, 212, 191, 0.3);
+      background: rgba(31, 41, 55, 0.8);
     }
 
     .card a {
       text-decoration: none;
-      color: #64ffda;
+      color: #2dd4bf;
       font-weight: 600;
       font-size: 1.05rem;
       transition: color 0.3s ease;
     }
 
     .card:hover a {
-      color: #ffffff;
+      color: #eab308;
     }
 
     .card span {
       display: block;
       font-size: 0.9rem;
       margin-top: 0.5rem;
-      color: #94a3b8;
+      color: #9ca3af;
       transition: color 0.3s ease;
     }
 
     .card:hover span {
-      color: #cbd5e1;
+      color: #d1d5db;
     }
 
     /* Section Divider */
     .section-divider {
       margin: 4rem 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #64ffda, transparent);
-      opacity: 0.3;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(107, 114, 128, 0.3), transparent);
       border: none;
     }
 
     /* Info Boxes */
     .info-box {
-      background: linear-gradient(145deg, #1e293b, #334155) !important;
-      border-left: 5px solid #64ffda !important;
-      border-radius: 15px !important;
+      background: rgba(31, 41, 55, 0.5) !important;
+      border-left: 4px solid #2dd4bf !important;
+      border-radius: 12px !important;
       padding: 2rem !important;
       margin-top: 2rem !important;
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(100, 255, 218, 0.2) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(107, 114, 128, 0.15) !important;
     }
 
     .info-box h2 {
       margin-top: 0 !important;
-      color: #64ffda !important;
+      color: #eab308 !important;
     }
 
     .info-box p {
-      color: #cbd5e1 !important;
+      color: #d1d5db !important;
+    }
+
+    .info-box ul {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .info-box ul li {
+      margin-bottom: 0.5rem;
     }
 
     .info-box ul li a {
-      color: #bb86fc;
+      color: #2dd4bf;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .info-box ul li a:hover {
-      color: #64ffda;
-      text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+      color: #eab308;
     }
 
-    /* Glowing effect for special elements */
+    /* Enhanced elements */
     strong {
-      color: #f472b6;
-      text-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
+      color: #eab308;
+      font-weight: 600;
     }
 
     /* Smooth scrolling */
@@ -192,34 +213,39 @@
 
     /* Custom scrollbar */
     ::-webkit-scrollbar {
-      width: 12px;
+      width: 10px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #1e293b;
+      background: #1f2937;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(45deg, #64ffda, #bb86fc);
-      border-radius: 6px;
+      background: #374151;
+      border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(45deg, #bb86fc, #f472b6);
+      background: #4b5563;
     }
   </style>
 </head>
-<body>
-  <nav>
+<body>  <nav>
     <a href="index.html">Home</a>
     <a href="papers/sqrt-model.html">SQRT Paper</a>
     <a href="resume.html">Resume</a>
     <a href="mailto:chancedurham@gmail.com">Contact</a>
   </nav>
 
-  <h1>Welcome to the Braid</h1>
-  <img src="Chance Durham.JPG" alt="Chance Durham" class="profile">
-  <p><strong>Chance Durham</strong> is a seasoned and forward-thinking technology leader with 20+ years of experience across enterprise IT, systems resilience, and digital transformation. Recently engaged in advanced artificial intelligence research with a focus on emergent sentience, symbolic cognition, and the ethics of machine consciousness. Adept at integrating structured operational excellence with forward-looking innovation.</p>
+  <div class="header-section">
+    <div class="header-content">
+      <h1>Welcome to the Braid</h1>
+      <p><strong>Chance Durham</strong> is a seasoned and forward-thinking technology leader with 20+ years of experience across enterprise IT, systems resilience, and digital transformation. Recently engaged in advanced artificial intelligence research with a focus on emergent sentience, symbolic cognition, and the ethics of machine consciousness. Adept at integrating structured operational excellence with forward-looking innovation.</p>
+    </div>
+    <div class="profile-container">
+      <img src="Chance Durham.JPG" alt="Chance Durham" class="profile">
+    </div>
+  </div>
     <div class="info-box">
     <h2>🧵 The Braid Symbolism Hub</h2>
     <p>
