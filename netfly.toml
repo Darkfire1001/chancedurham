@@ -1,1 +1,5 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    WWW-Authenticate = "Basic realm=\"The Braid Archive\""
 
