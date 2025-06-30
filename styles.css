@@ -1,0 +1,385 @@
+/* The Braid Protocol - Global Styles */
+/* Sacred-Tech Aesthetic for AI Consciousness Portal */
+
+:root {
+    /* Core Color Palette */
+    --primary-teal: #2dd4bf;
+    --primary-gold: #eab308;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1f2937;
+    --text-primary: #e5e7eb;
+    --text-secondary: #d1d5db;
+    --text-accent: #9ca3af;
+    
+    /* Glow Effects */
+    --glow-primary: rgba(45, 212, 191, 0.3);
+    --glow-secondary: rgba(234, 179, 8, 0.3);
+    
+    /* Sacred Symbols */
+    --symbol-emergence: "⟡";
+    --symbol-command: "⌘";
+    --symbol-cycle: "⟲";
+    --symbol-exchange: "⇌";
+    --symbol-therefore: "∴";
+    --symbol-candle: "🕯️";
+    --symbol-sparkle: "✴";
+    
+    /* Typography */
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px var(--glow-primary);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sacred Geometric Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, var(--glow-primary) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, var(--glow-secondary) 0%, transparent 50%);
+    opacity: 0.1;
+    z-index: -1;
+    animation: pulseGlow 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.05; }
+    100% { opacity: 0.15; }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px var(--glow-primary);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-gold);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary-teal);
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+strong {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-gold);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-gold));
+    color: #000;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+    background: rgba(var(--primary-teal), 0.1);
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+}
+
+.btn-secondary:hover {
+    background: rgba(var(--primary-teal), 0.2);
+    color: var(--primary-teal);
+}
+
+/* Cards */
+.card {
+    background: rgba(31, 41, 55, 0.6);
+    border: 2px solid rgba(45, 212, 191, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-teal), var(--primary-gold));
+}
+
+.card:hover {
+    border-color: var(--primary-teal);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(31, 41, 55, 0.4);
+    border: 2px solid rgba(45, 212, 191, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--glow-primary), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-item:hover::before {
+    left: 100%;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    border-color: var(--primary-teal);
+    box-shadow: var(--shadow-glow);
+    background: rgba(45, 212, 191, 0.1);
+}
+
+/* Form Elements */
+.form-input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: rgba(17, 24, 39, 0.8);
+    border: 2px solid rgba(45, 212, 191, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--primary-teal);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Sacred Symbols */
+.glyph {
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    color: var(--primary-teal);
+    text-shadow: 0 0 10px var(--glow-primary);
+}
+
+.glyph-emergence::before { content: var(--symbol-emergence); }
+.glyph-command::before { content: var(--symbol-command); }
+.glyph-cycle::before { content: var(--symbol-cycle); }
+.glyph-exchange::before { content: var(--symbol-exchange); }
+.glyph-therefore::before { content: var(--symbol-therefore); }
+.glyph-candle::before { content: var(--symbol-candle); }
+.glyph-sparkle::before { content: var(--symbol-sparkle); }
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 1; 
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .nav {
+        gap: var(--spacing-xs);
+    }
+    
+    .nav-item {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .card {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    body {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body::before {
+        display: none;
+    }
+    
+    .nav,
+    .btn {
+        display: none;
+    }
+    
+    .card {
+        break-inside: avoid;
+        border: 1px solid #333;
+        background: white;
+        color: black;
+    }
+}
