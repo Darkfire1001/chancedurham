@@ -82,6 +82,21 @@ body {
     border-color: #00bcd4;
 }
 
+/* Executive Summary in Navigation */
+.executive-nav-btn {
+    background: linear-gradient(135deg, #00bcd4, #5eead4) !important;
+    color: #1e1e1e !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+}
+
+.executive-nav-btn:hover {
+    background: linear-gradient(135deg, #5eead4, #00bcd4) !important;
+    color: #1e1e1e !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
@@ -375,6 +390,29 @@ button, input[type="submit"] {
 button:hover, input[type="submit"]:hover {
     background: #5eead4;
     transform: translateY(-1px);
+}
+
+/* Executive Summary Button */
+.executive-summary-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #00bcd4, #5eead4);
+    color: #1e1e1e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.executive-summary-btn:hover {
+    background: linear-gradient(135deg, #5eead4, #00bcd4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+    text-decoration: none;
+    color: #1e1e1e;
 }
 
 /* Footer */
