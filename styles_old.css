@@ -1,0 +1,440 @@
+/* TheBraidProtocol.com - Professional Clean Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1e1e1e;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #1e1e1e;
+    padding: 2rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    font-weight: 400;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    border: 1px solid #3a3a3a;
+}
+
+.nav-button:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+.nav-button.primary {
+    background: #00bcd4;
+    color: #ffffff;
+    border-color: #00bcd4;
+}
+
+.nav-button.primary:hover {
+    background: #5eead4;
+    border-color: #5eead4;
+    color: #1e1e1e;
+}
+
+/* Content Cards */
+.card {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+    border: 1px solid #3a3a3a;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #00bcd4;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 1.5rem 0 1rem 0;
+    color: #5eead4;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+/* Patent Grid */
+.patent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.patent-item {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #00bcd4;
+    border: 1px solid #3a3a3a;
+}
+
+.patent-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #5eead4;
+}
+
+.patent-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #00bcd4;
+    color: #1e1e1e;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.patent-status.provisional {
+    background: #5eead4;
+    color: #1e1e1e;
+}
+
+/* Links */
+.link {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin: 4px 8px 4px 0;
+    border: 1px solid #4a4a4a;
+    transition: all 0.2s ease;
+}
+
+.download-link:hover {
+    background: #00bcd4;
+    color: #1e1e1e;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+}
+
+.link:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    transition: background 0.3s ease;
+}
+
+.download-link:hover {
+    background: rgba(255, 215, 0, 0.25) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Business Value Cards */
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.business-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid #ffd700;
+}
+
+.business-card h3 {
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+}
+
+/* Protocol Steps */
+.protocol-steps {
+    counter-reset: step-counter;
+}
+
+.protocol-step {
+    counter-increment: step-counter;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    position: relative;
+}
+
+.protocol-step::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: #28a745;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact-info {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+}
+
+.contact-info h3 {
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Acquisition Box */
+.acquisition-box {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #0a0a0a;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.acquisition-box h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.acquisition-box .price {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+/* Footer */
+.footer {
+    background: #0a0a0a;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer .braid-mark {
+    font-size: 2rem;
+    color: #ffd700;
+    opacity: 0.6;
+}
+
+/* Enhanced Interactive Elements */
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffd700) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Navigation Links Hover Enhancement */
+.nav-link:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.02);
+}
+
+/* Card Hover Effects */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+/* Protocol Step Hover */
+.protocol-step:hover {
+    background: rgba(255, 215, 0, 0.08);
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-button {
+        text-align: center;
+    }
+    
+    .patent-grid,
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .acquisition-box .price {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobile Optimization Enhancements */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .nav-container {
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 12px;
+        text-align: center;
+    }
+    
+    .navigation-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .navigation-box .nav-item {
+        padding: 20px 15px;
+    }
+    
+    .patent-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .business-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .protocol-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .acquisition-box .price {
+        font-size: 2rem;
+    }
+    
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
+.bold { font-weight: 700; }
