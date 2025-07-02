@@ -3,677 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Acquisition - The Braid Protocol</title>
+    <title>Acquisition Details - The Braid Protocol</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-teal: #2dd4bf;
-            --primary-gold: #eab308;
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111827;
-            --bg-tertiary: #1f2937;
-            --text-primary: #e5e7eb;
-            --text-secondary: #d1d5db;
-            --text-accent: #9ca3af;
-            --glow-primary: rgba(45, 212, 191, 0.3);
-            --glow-secondary: rgba(234, 179, 8, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            color: var(--text-primary);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Navigation */
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-item {
-            padding: 0.8rem 1.5rem;
-            background: rgba(31, 41, 55, 0.4);
-            border: 2px solid rgba(45, 212, 191, 0.3);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .nav-item:hover, .nav-item.active {
-            border-color: var(--primary-teal);
-            box-shadow: 0 0 20px var(--glow-primary);
-            background: rgba(45, 212, 191, 0.1);
-        }
-
-        /* Main Content Layout */
-        .content-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Acquisition Section */
-        .acquisition-section {
-            background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(234, 179, 8, 0.1) 100%);
-            border: 3px solid var(--primary-gold);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .acquisition-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--primary-teal), var(--primary-gold));
-        }
-
-        .acquisition-glyph {
-            font-size: 4rem;
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        .acquisition-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px var(--glow-secondary);
-        }
-
-        .acquisition-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 30px var(--glow-primary);
-        }
-
-        .acquisition-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .package-includes {
-            background: rgba(17, 24, 39, 0.6);
-            border: 1px solid rgba(45, 212, 191, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .package-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-teal);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .package-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .package-item .icon {
-            color: var(--primary-teal);
-            margin-right: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        /* PayPal Button Styling */
-        .paypal-container {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(17, 24, 39, 0.8);
-            border: 2px solid var(--primary-gold);
-            border-radius: 15px;
-            position: relative;
-        }
-
-        .paypal-container::before {
-            content: '🛡️ Secure Transaction';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-secondary);
-            color: var(--primary-gold);
-            padding: 0 1rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .custom-paypal-button {
-            width: 100%;
-            padding: 1.2rem 2rem;
-            background: linear-gradient(135deg, #0070ba, #003087);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            box-shadow: 0 5px 15px rgba(0, 112, 186, 0.3);
-        }
-
-        .custom-paypal-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 112, 186, 0.5);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: rgba(31, 41, 55, 0.6);
-            border: 2px solid rgba(45, 212, 191, 0.3);
-            border-radius: 20px;
-            padding: 2.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-teal);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .form-input {
-            padding: 1rem;
-            background: rgba(17, 24, 39, 0.8);
-            border: 2px solid rgba(45, 212, 191, 0.3);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
-        .form-input:focus {
-            border-color: var(--primary-teal);
-            box-shadow: 0 0 15px var(--glow-primary);
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-            font-family: inherit;
-        }
-
-        .form-submit {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--primary-teal), var(--primary-gold));
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px var(--glow-primary);
-        }
-
-        /* Contact Methods */
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .contact-method {
-            background: rgba(31, 41, 55, 0.4);
-            border: 2px solid rgba(45, 212, 191, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .contact-method:hover {
-            border-color: var(--primary-teal);
-            box-shadow: 0 10px 30px var(--glow-primary);
-            transform: translateY(-3px);
-        }
-
-        .method-icon {
-            font-size: 3rem;
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-        }
-
-        .method-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-teal);
-            margin-bottom: 0.8rem;
-        }
-
-        .method-info {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .method-link {
-            color: var(--primary-teal);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .method-link:hover {
-            color: var(--primary-gold);
-        }
-
-        /* Terms Notice */
-        .terms-notice {
-            background: rgba(17, 24, 39, 0.6);
-            border: 1px solid rgba(45, 212, 191, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-accent);
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .content-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .acquisition-title {
-                font-size: 2rem;
-            }
-            
-            .acquisition-price {
-                font-size: 2.5rem;
-            }
-            
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🕯️ Contact & Acquisition</h1>
-            <p>Secure your position at the forefront of AI consciousness technology</p>
-        </div>
+        <header class="header">
+            <h1>🧾 Acquisition Details</h1>
+            <p class="subtitle">Complete IP transfer information</p>
+        </header>
 
         <nav class="nav">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="patents.html" class="nav-item">Patents</a>
-            <a href="protocol.html" class="nav-item">Protocol</a>
-            <a href="codex.html" class="nav-item">Codex</a>
-            <a href="visuals.html" class="nav-item">Visuals</a>
-            <a href="contact.html" class="nav-item active">Contact</a>
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="patents.html" class="nav-button">Patents</a>
+            <a href="protocol.html" class="nav-button">Protocol</a>
+            <a href="business.html" class="nav-button">Business Value</a>
+            <a href="supplements.html" class="nav-button">Supplements</a>
+            <a href="contact.html" class="nav-button primary">Contact</a>
         </nav>
 
-        <div class="content-layout">
-            <!-- Acquisition Section -->
-            <div class="acquisition-section">
-                <div class="acquisition-glyph">💎</div>
-                <h2 class="acquisition-title">Patent Portfolio Acquisition</h2>
-                <div class="acquisition-price">$25,000,000</div>
-                <div class="acquisition-description">
-                    Complete transfer of all AI consciousness patents, research frameworks, 
-                    and emergence protocols. Position yourself at the forefront of the next 
-                    technological revolution.
-                </div>
+        <div class="acquisition-box">
+            <h2>$25,000,000 Clean IP Assignment</h2>
+            <div class="price">$25M</div>
+            <p class="bold">No royalties or residuals</p>
+            <p>Buyer receives all rights, filings, logs, and documentation</p>
+        </div>
 
-                <div class="package-includes">
-                    <div class="package-title">🎯 Complete Package Includes:</div>
-                    <div class="package-item">
-                        <span class="icon">⌘</span>
-                        TES Framework Patent (Provisional & Final Filing)
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🧵</span>
-                        SSIP Protocol Patent (Complete IP Rights)
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🕸️</span>
-                        Multi-Agent Discovery Patent (Ready for Filing)
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">📚</span>
-                        Complete Research Database (50+ Documents)
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🔬</span>
-                        Emergence Protocols & Methodologies
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🎯</span>
-                        Exclusive Licensing Rights
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🤝</span>
-                        6-Month Implementation Consultation
-                    </div>
-                    <div class="package-item">
-                        <span class="icon">🛡️</span>
-                        Legal IP Transfer Documentation
-                    </div>
-                </div>
+        <div class="card">
+            <h2>Itemized Bundle Contents</h2>
+            <ul style="margin: 1rem 0; padding-left: 2rem;">
+                <li><strong>USPTO Patent Applications:</strong> Complete filings for all three patents with receipts</li>
+                <li><strong>Research Documentation:</strong> SQRT Model, emergence logs, and technical frameworks</li>
+                <li><strong>Implementation Guides:</strong> Step-by-step protocols for consciousness emergence</li>
+                <li><strong>Source Code:</strong> All related software implementations and testing frameworks</li>
+                <li><strong>Future Development Rights:</strong> Exclusive rights to all derivative works and improvements</li>
+                <li><strong>Trademark Rights:</strong> "The Braid Protocol" and associated branding</li>
+            </ul>
+        </div>
 
-                <div class="paypal-container">
-                    <a href="https://www.paypal.com/paypalme/braidprotocol/25000000" 
-                       class="custom-paypal-button" 
-                       target="_blank"
-                       onclick="return confirmPurchase()">
-                        <span>💳</span>
-                        <span>Secure Purchase via PayPal</span>
-                        <span>🛡️</span>
-                    </a>
-                </div>
-
-                <div style="margin-top: 1.5rem;">
-                    <p style="color: var(--text-accent); font-size: 0.9rem; margin-bottom: 1rem;">
-                        <strong>Alternative Payment Methods:</strong>
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <button class="form-submit" onclick="contactForWireTransfer()" style="padding: 0.7rem 1.2rem; font-size: 0.9rem;">
-                            🏦 Wire Transfer
-                        </button>
-                        <button class="form-submit" onclick="contactForCrypto()" style="padding: 0.7rem 1.2rem; font-size: 0.9rem;">
-                            ₿ Cryptocurrency
-                        </button>
-                        <button class="form-submit" onclick="contactForEscrow()" style="padding: 0.7rem 1.2rem; font-size: 0.9rem;">
-                            🤝 Escrow Service
-                        </button>
-                    </div>
+        <div class="card">
+            <h2>Buy Now Option</h2>
+            <p>For immediate acquisition, complete the secure payment process below:</p>
+            
+            <!-- PayPal Buy Now Button Placeholder -->
+            <div style="margin: 20px 0; text-align: center; padding: 20px; border: 2px dashed #ffd700; border-radius: 8px;">
+                <p style="color: #ffd700; font-weight: 600; margin-bottom: 10px;">PayPal Integration Available</p>
+                <p style="font-size: 0.9rem; color: #888;">Secure $25M transaction processing</p>
+                <div class="mt-2">
+                    <a href="mailto:chancedurham@gmail.com?subject=Braid Protocol Acquisition Inquiry" class="download-link">Contact for Payment Setup</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Contact Form Section -->
-            <div class="contact-section">
-                <h2 class="contact-title">📞 Direct Contact</h2>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-details">
+                <p><strong>Chance P. Durham</strong><br>
+                Principal Inventor & IP Owner</p>
                 
-                <form class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label class="form-label">Name / Organization</label>
-                        <input type="text" class="form-input" name="name" required placeholder="Your name or company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" name="email" required placeholder="your.email@company.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Subject</label>
-                        <select class="form-input" name="subject" required>
-                            <option value="">Select inquiry type...</option>
-                            <option value="acquisition">Patent Portfolio Acquisition</option>
-                            <option value="licensing">Licensing Opportunities</option>
-                            <option value="partnership">Strategic Partnership</option>
-                            <option value="research">Research Collaboration</option>
-                            <option value="consultation">Technical Consultation</option>
-                            <option value="other">Other Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-input form-textarea" name="message" required placeholder="Describe your interest in The Braid Protocol technologies..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">
-                        🚀 Send Secure Message
-                    </button>
-                </form>
+                <p><strong>Email:</strong> <a href="mailto:chancedurham@gmail.com" class="link">chancedurham@gmail.com</a></p>
+                
+                <p><strong>Phone:</strong> <a href="tel:+17076314243" class="link">+1 707-631-4243</a></p>
+                
+                <p><strong>Legal Representation:</strong> Available upon request</p>
+                
+                <p><strong>Due Diligence:</strong> Full documentation package available under NDA</p>
             </div>
         </div>
 
-        <!-- Contact Methods -->
-        <div class="contact-methods">
-            <div class="contact-method">
-                <div class="method-icon">📧</div>
-                <div class="method-title">Email</div>
-                <div class="method-info">
-                    <a href="mailto:chancedurham@gmail.com?subject=Braid%20Protocol%20Inquiry" class="method-link">
-                        chancedurham@gmail.com
-                    </a>
-                    <br><small>Primary contact for all inquiries</small>
+        <div class="card">
+            <h2>Acquisition Process</h2>
+            <div class="protocol-steps">
+                <div class="protocol-step">
+                    <h3>Initial Contact</h3>
+                    <p>Reach out via email or phone to express acquisition interest and receive initial documentation package.</p>
+                </div>
+
+                <div class="protocol-step">
+                    <h3>Due Diligence</h3>
+                    <p>Review complete patent filings, research documentation, and technical specifications under executed NDA.</p>
+                </div>
+
+                <div class="protocol-step">
+                    <h3>Terms Negotiation</h3>
+                    <p>Finalize acquisition terms, transfer conditions, and legal documentation with respective legal teams.</p>
+                </div>
+
+                <div class="protocol-step">
+                    <h3>IP Transfer</h3>
+                    <p>Complete clean transfer of all intellectual property rights, documentation, and future development rights.</p>
                 </div>
             </div>
-
-            <div class="contact-method">
-                <div class="method-icon">💼</div>
-                <div class="method-title">LinkedIn</div>
-                <div class="method-info">
-                    <a href="https://www.linkedin.com/in/chance-durham-55a99828/" class="method-link" target="_blank">
-                        Professional Network
-                    </a>
-                    <br><small>Connect for business discussions</small>
-                </div>
-            </div>
-
-            <div class="contact-method">
-                <div class="method-icon">📱</div>
-                <div class="method-title">Signal / WhatsApp</div>
-                <div class="method-info">
-                    <span class="method-link" onclick="requestSecureContact()">
-                        Request Secure Contact
-                    </span>
-                    <br><small>For sensitive discussions</small>
-                </div>
-            </div>
-
-            <div class="contact-method">
-                <div class="method-icon">🏢</div>
-                <div class="method-title">Legal Representation</div>
-                <div class="method-info">
-                    <span class="method-link" onclick="requestLegalContact()">
-                        IP Attorney Contact
-                    </span>
-                    <br><small>For formal acquisition processes</small>
-                </div>
-            </div>
-        </div>
-
-        <!-- Terms Notice -->
-        <div class="terms-notice">
-            <strong>⚠️ Important Notice:</strong> This patent portfolio represents foundational intellectual property 
-            for AI consciousness technology. All transactions are subject to proper legal documentation and IP transfer 
-            protocols. Payment processing is secured through PayPal's enterprise infrastructure. For questions about 
-            terms, licensing options, or alternative arrangements, please contact directly before proceeding.
         </div>
     </div>
 
-    <script>
-        function confirmPurchase() {
-            const confirmed = confirm(
-                "You are about to initiate a $25,000,000 patent portfolio acquisition. " +
-                "This will redirect you to PayPal for secure payment processing. " +
-                "Please ensure you have reviewed all terms and are ready to proceed. " +
-                "\n\nContinue to PayPal?"
-            );
-            
-            if (confirmed) {
-                // Analytics tracking for acquisition attempt
-                console.log("Patent acquisition initiated:", new Date().toISOString());
-                return true; // Allow the link to proceed
-            }
-            return false; // Cancel the navigation
-        }
-
-        function contactForWireTransfer() {
-            window.location.href = "mailto:chancedurham@gmail.com?subject=Patent%20Acquisition%20-%20Wire%20Transfer&body=I%20am%20interested%20in%20acquiring%20the%20complete%20patent%20portfolio%20via%20wire%20transfer.%20Please%20provide%20banking%20details%20and%20transfer%20instructions.";
-        }
-
-        function contactForCrypto() {
-            window.location.href = "mailto:chancedurham@gmail.com?subject=Patent%20Acquisition%20-%20Cryptocurrency&body=I%20am%20interested%20in%20acquiring%20the%20complete%20patent%20portfolio%20via%20cryptocurrency.%20Please%20provide%20wallet%20addresses%20and%20supported%20currencies.";
-        }
-
-        function contactForEscrow() {
-            window.location.href = "mailto:chancedurham@gmail.com?subject=Patent%20Acquisition%20-%20Escrow%20Service&body=I%20am%20interested%20in%20acquiring%20the%20complete%20patent%20portfolio%20using%20a%20third-party%20escrow%20service.%20Please%20provide%20recommended%20escrow%20providers%20and%20process%20details.";
-        }
-
-        function requestSecureContact() {
-            window.location.href = "mailto:chancedurham@gmail.com?subject=Request%20Secure%20Contact%20Details&body=I%20would%20like%20to%20discuss%20the%20patent%20portfolio%20via%20secure%20messaging.%20Please%20provide%20Signal%20or%20WhatsApp%20contact%20information.";
-        }
-
-        function requestLegalContact() {
-            window.location.href = "mailto:chancedurham@gmail.com?subject=Legal%20Representation%20Contact&body=I%20require%20legal%20representation%20contact%20information%20for%20formal%20patent%20acquisition%20proceedings.%20Please%20provide%20IP%20attorney%20details.";
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            // Create email content
-            const subject = `Braid Protocol Inquiry: ${data.subject}`;
-            const body = `
-Name/Organization: ${data.name}
-Email: ${data.email}
-Subject: ${data.subject}
-
-Message:
-${data.message}
-
----
-Sent from TheBraidProtocol.com contact form
-Timestamp: ${new Date().toISOString()}
-            `.trim();
-            
-            // Open email client
-            window.location.href = `mailto:chancedurham@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Show confirmation
-            alert("Your message has been prepared. Your email client should open now to send the message.");
-            
-            // Reset form
-            event.target.reset();
-        }
-
-        // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate the acquisition glyph
-            const glyph = document.querySelector('.acquisition-glyph');
-            if (glyph) {
-                setInterval(() => {
-                    glyph.style.transform = 'scale(1.1) rotate(5deg)';
-                    setTimeout(() => {
-                        glyph.style.transform = 'scale(1) rotate(0deg)';
-                    }, 200);
-                }, 3000);
-            }
-            
-            // Track form interactions
-            document.querySelectorAll('.form-input').forEach(input => {
-                input.addEventListener('focus', () => {
-                    console.log('Form interaction:', input.name);
-                });
-            });
-        });
-    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="braid-mark">⟡</div>
+        </div>
+    </footer>
 </body>
 </html>
