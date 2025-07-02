@@ -38,10 +38,10 @@
 
 ## 🎯 Acquisition Value
 
-**Total Package Value:** $25,000,000 USD  
+**Total Package Value:** $35,000,000 USD  
 **IP Assets:** 3 USPTO Patent Applications  
 **Documentation:** Complete technical and business framework  
-**Rights:** Full ownership transfer with no residuals  
+**Rights:** Full ownership transfer with no residuals
 
 ## 📞 Next Steps
 
