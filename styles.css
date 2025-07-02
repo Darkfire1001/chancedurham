@@ -336,6 +336,69 @@ button[type="submit"]:hover {
     }
 }
 
+/* Mobile Optimization Enhancements */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .nav-container {
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 12px;
+        text-align: center;
+    }
+    
+    .navigation-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .navigation-box .nav-item {
+        padding: 20px 15px;
+    }
+    
+    .patent-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .business-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .protocol-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .acquisition-box .price {
+        font-size: 2rem;
+    }
+    
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .mb-1 { margin-bottom: 1rem; }
