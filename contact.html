@@ -47,13 +47,40 @@
         <div class="card">
             <h2>Buy Now Option</h2>
             <p>For immediate acquisition, complete the secure payment process below:</p>
-            
-            <!-- PayPal Buy Now Button Placeholder -->
-            <div style="margin: 20px 0; text-align: center; padding: 20px; border: 2px dashed #ffd700; border-radius: 8px;">
-                <p style="color: #ffd700; font-weight: 600; margin-bottom: 10px;">PayPal Integration Available</p>
-                <p style="font-size: 0.9rem; color: #888;">Secure $25M transaction processing</p>
-                <div class="mt-2">
-                    <a href="mailto:chancedurham@gmail.com?subject=Braid Protocol Acquisition Inquiry" class="download-link">Contact for Payment Setup</a>
+              <!-- PayPal Buy Now Button -->
+            <div style="margin: 20px 0; text-align: center;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="chancedurham@gmail.com">
+                    <input type="hidden" name="item_name" value="The Braid Protocol - Complete IP Portfolio Acquisition">
+                    <input type="hidden" name="amount" value="25000000">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="return" value="https://thebraidprotocol.com/contact.html?success=true">
+                    <input type="hidden" name="cancel_return" value="https://thebraidprotocol.com/contact.html?cancelled=true">
+                    <input type="hidden" name="notify_url" value="https://thebraidprotocol.com/paypal-ipn">
+                    
+                    <button type="submit" style="background: linear-gradient(135deg, #ffd700, #ffed4e); 
+                                                   color: #000; 
+                                                   border: none; 
+                                                   padding: 15px 30px; 
+                                                   font-size: 18px; 
+                                                   font-weight: 600; 
+                                                   border-radius: 8px; 
+                                                   cursor: pointer; 
+                                                   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+                                                   transition: all 0.3s ease;">
+                        🚀 Buy Now - $25,000,000 USD
+                    </button>
+                </form>
+                
+                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">
+                    Secure PayPal transaction • Immediate IP transfer upon payment clearance
+                </p>
+                
+                <div style="margin-top: 15px; padding: 10px; background: rgba(255, 215, 0, 0.1); border-radius: 6px;">
+                    <p style="font-size: 0.9rem; color: #ffd700;">
+                        💡 Alternative: <a href="mailto:chancedurham@gmail.com?subject=Braid Protocol Acquisition - Wire Transfer" class="link">Wire transfer available</a> for enterprise buyers
+                    </p>
                 </div>
             </div>
         </div>

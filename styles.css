@@ -169,7 +169,9 @@ body {
 }
 
 .download-link:hover {
-    background: #004499;
+    background: rgba(255, 215, 0, 0.25) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 /* Business Value Cards */
@@ -277,6 +279,36 @@ body {
     font-size: 2rem;
     color: #ffd700;
     opacity: 0.6;
+}
+
+/* Enhanced Interactive Elements */
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffd700) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Navigation Links Hover Enhancement */
+.nav-link:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.02);
+}
+
+/* Card Hover Effects */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+/* Protocol Step Hover */
+.protocol-step:hover {
+    background: rgba(255, 215, 0, 0.08);
+    transform: translateX(5px);
 }
 
 /* Responsive */
