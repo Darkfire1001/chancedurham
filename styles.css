@@ -441,6 +441,19 @@ button:hover, input[type="submit"]:hover {
     color: #00bcd4;
 }
 
+/* Stealth Link */
+.stealth-link {
+    opacity: 0.15;
+    font-size: 0.7rem;
+    color: #3a3a3a;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+.stealth-link:hover {
+    opacity: 0.3;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
