@@ -462,11 +462,6 @@ button:hover, input[type="submit"]:hover {
         gap: 1rem;
     }
     
-    .patent-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    
     .business-cards {
         grid-template-columns: 1fr;
     }
@@ -491,6 +486,11 @@ button:hover, input[type="submit"]:hover {
     
     .patent-item {
         padding: 1rem;
+    }
+    
+    .patent-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
     
     .hero h1 {
