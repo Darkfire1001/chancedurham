@@ -123,9 +123,13 @@ body {
 /* Navigation Boxes */
 .navigation-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     margin: 2rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-item {
@@ -489,6 +493,11 @@ button:hover, input[type="submit"]:hover {
     }
     
     .patent-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .navigation-box {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
