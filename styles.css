@@ -203,16 +203,51 @@ body {
     color: #e0e0e0;
 }
 
-/* Patent Grid */
+/* Patent Grid - Pyramid Layout for 5 Patents */
 .patent-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     margin: 2rem 0;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Foundation Patents - Top Two Rows (2x2 Grid) */
+.patent-foundation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Capstone Patent - Bottom Row (Centered) */
+.patent-capstone {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.patent-capstone .patent-item {
+    max-width: 600px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    border-left: 4px solid #ff6b35;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+    position: relative;
+}
+
+.patent-capstone .patent-item::before {
+    content: "🎯 CAPSTONE";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: #ff6b35;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .patent-item {
@@ -522,9 +557,17 @@ button:hover, input[type="submit"]:hover {
         padding: 1rem;
     }
     
-    .patent-grid {
+    .patent-foundation {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        gap: 1rem;
+    }
+    
+    .patent-capstone {
+        margin-top: 1rem;
+    }
+    
+    .patent-capstone .patent-item {
+        max-width: 100%;
     }
     
     .navigation-box {
