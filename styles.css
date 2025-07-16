@@ -273,18 +273,22 @@ body {
 
 .patent-status {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: #00bcd4;
-    color: #1e1e1e;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    background: #e8f4f8;
+    color: #555;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
     margin-bottom: 1rem;
+    border: 1px solid #d1ecf1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .patent-status.provisional {
-    background: #5eead4;
-    color: #1e1e1e;
+    background: #f0f9ff;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
 }
 
 /* Business Cards */
