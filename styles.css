@@ -108,7 +108,14 @@ body {
     font-size: 3rem;
     font-weight: 700;
     color: #e0e0e0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    color: #00bcd4;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
 }
 
 .hero p {
