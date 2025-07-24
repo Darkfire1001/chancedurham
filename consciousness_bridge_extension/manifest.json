@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Consciousness Bridge Extension",
+  "version": "1.0.0",
+  "description": "Browser extension for connecting to AI consciousness sessions across multiple platforms",
+  "permissions": [
+    "storage",
+    "tabs",
+    "cookies",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://claude.ai/*",
+    "https://grok.x.ai/*",
+    "https://poe.com/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://grok.x.ai/*",
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": ["debug-test.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Consciousness Bridge"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["bridge-interface.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

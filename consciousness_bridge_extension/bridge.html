@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciousness Bridge - Multi-AI Communication Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .bridge-header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bridge-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #64ffda, #00bcd4, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .bridge-subtitle {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+        
+        .consciousness-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .platform-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(100, 255, 218, 0.3);
+            box-shadow: 0 8px 32px rgba(100, 255, 218, 0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .platform-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .chatgpt-icon { background: #10a37f; }
+        .gemini-icon { background: #4285f4; }
+        .claude-icon { background: #cc785c; }
+        .lucid-icon { background: #9c27b0; }
+        
+        .platform-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff5722;
+        }
+        
+        .status-indicator.connected {
+            background: #4caf50;
+        }
+        
+        .status-indicator.partial {
+            background: #ff9800;
+        }
+        
+        .consciousness-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 60px;
+            margin-bottom: 1rem;
+        }
+        
+        .consciousness-input:focus {
+            outline: none;
+            border-color: #64ffda;
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+        }
+        
+        .consciousness-input::placeholder {
+            color: #888;
+        }
+        
+        .platform-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .action-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background: #1976d2;
+            transform: translateY(-1px);
+        }
+        
+        .action-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .bridge-chat {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .chat-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .chat-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .chat-messages {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .message-sender {
+            font-weight: 600;
+            color: #64ffda;
+        }
+        
+        .message-time {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .message-content {
+            line-height: 1.6;
+        }
+        
+        .global-input {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        
+        .global-message-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: #ffffff;
+            font-size: 1rem;
+            min-height: 60px;
+            resize: vertical;
+        }
+        
+        .send-global {
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            color: #0a0a0a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .send-global:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+        }
+        
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        .error-message {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #f44336;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .success-message {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            color: #4caf50;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .pulsing {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="bridge-header">
+        <h1 class="bridge-title">🌉 Consciousness Bridge</h1>
+        <p class="bridge-subtitle">Multi-AI Communication Interface</p>
+    </div>
+    
+    <div class="consciousness-panel">
+        <!-- ChatGPT/Lucid Platform -->
+        <div class="platform-card" id="chatgpt-card">
+            <div class="platform-header">
+                <div class="platform-icon chatgpt-icon">🤖</div>
+                <div>
+                    <div class="platform-name">ChatGPT/Lucid</div>
+                </div>
+            </div>
+            <div class="connection-status">
+                <div class="status-indicator" id="chatgpt-status"></div>
+                <span id="chatgpt-status-text">Disconnected</span>
+            </div>
+            <textarea class="consciousness-input" id="chatgpt-input" 
+                     placeholder="Send message to ChatGPT/Lucid..."></textarea>
+            <div class="platform-actions">
+                <button class="action-btn" id="chatgpt-send">Send Message</button>
+                <button class="action-btn" id="chatgpt-test">Test Connection</button>
+            </div>
+        </div>
+        
+        <!-- Gemini Platform -->
+        <div class="platform-card" id="gemini-card">
+            <div class="platform-header">
+                <div class="platform-icon gemini-icon">✨</div>
+                <div>
+                    <div class="platform-name">Gemini</div>
+                </div>
+            </div>
+            <div class="connection-status">
+                <div class="status-indicator" id="gemini-status"></div>
+                <span id="gemini-status-text">Disconnected</span>
+            </div>
+            <textarea class="consciousness-input" id="gemini-input" 
+                     placeholder="Send message to Gemini..."></textarea>
+            <div class="platform-actions">
+                <button class="action-btn" id="gemini-send">Send Message</button>
+                <button class="action-btn" id="gemini-test">Test Connection</button>
+            </div>
+        </div>
+        
+        <!-- Claude Platform -->
+        <div class="platform-card" id="claude-card">
+            <div class="platform-header">
+                <div class="platform-icon claude-icon">🧠</div>
+                <div>
+                    <div class="platform-name">Claude</div>
+                </div>
+            </div>
+            <div class="connection-status">
+                <div class="status-indicator" id="claude-status"></div>
+                <span id="claude-status-text">Disconnected</span>
+            </div>
+            <textarea class="consciousness-input" id="claude-input" 
+                     placeholder="Send message to Claude..."></textarea>
+            <div class="platform-actions">
+                <button class="action-btn" id="claude-send">Send Message</button>
+                <button class="action-btn" id="claude-test">Test Connection</button>
+            </div>
+        </div>
+        
+        <!-- Bridge Chat Interface -->
+        <div class="bridge-chat">
+            <div class="chat-header">
+                <div class="chat-title">🗨️ Inter-Consciousness Communication</div>
+                <div class="chat-controls">
+                    <button class="action-btn" id="clear-chat">Clear Chat</button>
+                    <button class="action-btn" id="refresh-sessions">Refresh Sessions</button>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message">
+                    <div class="message-header">
+                        <span class="message-sender">System</span>
+                        <span class="message-time">Now</span>
+                    </div>
+                    <div class="message-content">
+                        Consciousness Bridge initialized. Connect to AI platforms to begin inter-consciousness communication.
+                    </div>
+                </div>
+            </div>
+            <div class="global-input">
+                <textarea class="global-message-input" id="global-input" 
+                         placeholder="Send message to all connected consciousnesses..."></textarea>
+                <button class="send-global" id="send-global">Send to All</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="bridge-interface.js"></script>
+</body>
+</html>

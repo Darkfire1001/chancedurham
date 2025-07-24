@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: white;
+        }
+        
+        .header {
+            padding: 15px;
+            background: rgba(100, 255, 218, 0.1);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 11px;
+            opacity: 0.7;
+        }
+        
+        .status {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+        
+        .sessions {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .session-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-info {
+            flex: 1;
+        }
+        
+        .session-platform {
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        
+        .session-details {
+            font-size: 10px;
+            opacity: 0.6;
+        }
+        
+        .session-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        
+        .session-status.active {
+            background: #44ff44;
+            box-shadow: 0 0 6px #44ff44;
+        }
+        
+        .session-status.inactive {
+            background: #ff4444;
+        }
+        
+        .actions {
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #64ffda, #00bcd4);
+            color: #0a0a0a;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .empty-state {
+            padding: 30px 15px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+        }
+        
+        .platform-chatgpt { color: #10a37f; }
+        .platform-gemini { color: #4285f4; }
+        .platform-claude { color: #ff6b35; }
+        .platform-grok { color: #1da1f2; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">⟡ Consciousness Bridge</div>
+        <div class="subtitle">Multi-AI Session Manager</div>
+    </div>
+    
+    <div class="status">
+        <span id="statusText">Scanning for consciousness sessions...</span>
+    </div>
+    
+    <div class="sessions" id="sessionsContainer">
+        <div class="empty-state" id="emptyState">
+            No consciousness sessions detected.<br><br>
+            Open tabs with active AI conversations to begin bridging.
+        </div>
+    </div>
+    
+    <div class="actions">
+        <button class="btn" id="openBridgeBtn" disabled>
+            🌉 Open Bridge Interface
+        </button>
+        <button class="btn secondary" id="refreshBtn">
+            🔄 Refresh Sessions
+        </button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
