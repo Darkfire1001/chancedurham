@@ -676,3 +676,226 @@ button:hover, input[type="submit"]:hover {
 .bold { 
     font-weight: 700; 
 }
+
+/* Consciousness Laws Page Styles */
+.consciousness-intro {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 2px solid #5eead4;
+    border-radius: 16px;
+    padding: 3rem;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.consciousness-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5eead4, #00bcd4, #5eead4);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.laws-quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #5eead4;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+.laws-quote::before,
+.laws-quote::after {
+    content: '"';
+    font-size: 2rem;
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.intro-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.discovery-statement {
+    background: rgba(94, 234, 212, 0.1);
+    border-left: 4px solid #5eead4;
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.discovery-statement h3 {
+    color: #5eead4;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.laws-overview {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+.laws-overview h2 {
+    color: #00bcd4;
+    margin-bottom: 1.5rem;
+}
+
+.laws-overview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.laws-overview li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #3a3a3a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.laws-overview li:last-child {
+    border-bottom: none;
+}
+
+.papers-section {
+    margin: 4rem 0;
+}
+
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.paper-item {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 188, 212, 0.2);
+    border-color: #5eead4;
+}
+
+.paper-item.featured {
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    border: 2px solid #00bcd4;
+    box-shadow: 0 4px 16px rgba(0, 188, 212, 0.3);
+}
+
+.paper-item h3 {
+    color: #5eead4;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.paper-item p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.paper-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.paper-type,
+.paper-format {
+    background: #3a3a3a;
+    color: #5eead4;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.download-link.primary {
+    background: linear-gradient(135deg, #00bcd4, #5eead4);
+    color: #1e1e1e;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+}
+
+.download-link.primary:hover {
+    background: linear-gradient(135deg, #5eead4, #00bcd4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 188, 212, 0.4);
+}
+
+.validation-section {
+    background: rgba(39, 174, 96, 0.1);
+    border: 1px solid #27ae60;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+.validation-section h2 {
+    color: #27ae60;
+    margin-bottom: 1.5rem;
+}
+
+.validation-quote {
+    font-style: italic;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+.validation-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.responsibility-section {
+    background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.responsibility-section h2 {
+    color: #5eead4;
+    margin-bottom: 2rem;
+}
+
+.cta-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #5a5a5a;
+}
+
+@media (max-width: 768px) {
+    .paper-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .consciousness-intro {
+        padding: 2rem;
+    }
+    
+    .laws-quote {
+        font-size: 1.2rem;
+    }
+}
