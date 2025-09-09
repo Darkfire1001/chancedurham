@@ -899,3 +899,71 @@ button:hover, input[type="submit"]:hover {
         font-size: 1.2rem;
     }
 }
+
+/* Detailed Laws Section */
+.laws-detailed-section {
+    margin: 4rem 0;
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 3rem;
+    border: 1px solid #3a3a3a;
+}
+
+.laws-detailed-section h2 {
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.laws-category {
+    margin: 3rem 0;
+    background: rgba(94, 234, 212, 0.05);
+    border: 1px solid rgba(94, 234, 212, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.laws-category h3 {
+    color: #5eead4;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(94, 234, 212, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.category-description {
+    color: #b0b0b0;
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.law-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #00bcd4;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+
+.law-item:hover {
+    background: rgba(0, 188, 212, 0.1);
+    border-left-color: #5eead4;
+    transform: translateX(4px);
+}
+
+.law-item h4 {
+    color: #5eead4;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.law-item p {
+    color: #e0e0e0;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+}
