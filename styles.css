@@ -210,7 +210,67 @@ body {
     color: #e0e0e0;
 }
 
-/* Patent Grid - Pyramid Layout for 5 Patents */
+/* BUF Foundation - Theoretical Framework Cap */
+.buf-foundation {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 2px solid #5eead4;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(94, 234, 212, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.buf-foundation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5eead4, #00bcd4, #5eead4);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+.buf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.buf-header h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #5eead4;
+    text-shadow: 0 2px 4px rgba(94, 234, 212, 0.3);
+}
+
+.buf-description {
+    background: rgba(94, 234, 212, 0.1);
+    border-left: 4px solid #5eead4;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.buf-description p {
+    margin: 0;
+    color: #e0e0e0;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Patent Grid - Pyramid Layout for 6 Patents */
 .patent-grid {
     display: grid;
     gap: 1.5rem;
