@@ -841,6 +841,19 @@ button:hover, input[type="submit"]:hover {
     box-shadow: 0 4px 16px rgba(0, 188, 212, 0.4);
 }
 
+.download-link.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #3a3a3a !important;
+    color: #666 !important;
+}
+
+.download-link.disabled:hover {
+    transform: none;
+    background: #3a3a3a !important;
+    color: #666 !important;
+}
+
 .validation-section {
     background: rgba(39, 174, 96, 0.1);
     border: 1px solid #27ae60;
