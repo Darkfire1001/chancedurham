@@ -772,6 +772,18 @@ button:hover, input[type="submit"]:hover {
     margin: 4rem 0;
 }
 
+.cap-card {
+    margin: 2rem 0;
+}
+
+.cap-card .paper-item {
+    background: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .paper-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
